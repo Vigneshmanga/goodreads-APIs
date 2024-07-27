@@ -1,0 +1,95 @@
+#### get books API 
+GET http://localhost:3002/books/
+
+
+
+##### get specific book API
+
+get http://localhost:3002/book/50/
+
+
+
+###### add book API
+
+post http://localhost:3002/books/ 
+Content-Type: application/json
+
+{
+    "title": "vignesh biography",
+    "authorId": 2,
+    "rating": 4.65,
+    "ratingCount": 432243,
+    "reviewCount":543434,
+    "description": "djjfkj irjehf eifrjfh ifjdjhaoif af ifjiauf ahf",
+    "pages": 39,
+    "dateOfPublication": "july 31 2023",
+    "editionLanguage":"English",
+    "price": 390,
+    "onlineStores": "amazon"
+}
+
+###### update book API
+PUT http://localhost:3002/books/50/
+Content-Type: application/json
+
+{
+    "title": "lavanya biography",
+    "authorId": 2,
+    "rating": 4.65,
+    "ratingCount": 432243,
+    "reviewCount":543434,
+    "description": "djjfkj irjehf eifrjfh ifjdjhaoif af ifjiauf ahf",
+    "pages": 39,
+    "dateOfPublication": "july 31 2023",
+    "editionLanguage":"English",
+    "price": 390,
+    "onlineStores": "amazon"
+}
+
+####delete book API
+
+DELETE  http://localhost:3002/books/50/
+
+######### get author books API
+get http://localhost:3002/authors/1/books/
+
+####### get specific books using QUERY PARAMETERS
+get http://localhost:3002/query_books/?search_q=vignesh
+
+
+#### delete specified books contains specified name
+
+delete http://localhost:3002/query_delete_books/?search_q=vignesh
+
+##### create user API
+POST http://localhost:3002/users/
+Content-Type: application/json
+
+{   
+    "name":"vignesh",
+    "username":"vigneshmanga",
+    "password": "Vignesh-33",
+    "gender": "Male",
+    "location":"hyderabad"
+}
+
+
+### Login API
+
+POST http://localhost:3002/login/
+Content-Type: application/json
+
+{
+    "username":"vigneshmanga",
+    "password": "Vignesh-33"
+}
+
+#### get books API on verfying access token
+
+get http://localhost:3002/books/verifying_jwtToken/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZ25lc2htYW5nYSIsImlhdCI6MTcyMjA3MjAxNX0.NjFZCqQH4MbHn2CjWrm_An2RMFd-xiEndl3ZOoTENrQ
+
+
+##### get profile query using authenticate token
+get http://localhost:3002/profile/
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZ25lc2htYW5nYSIsImlhdCI6MTcyMjA3MjAxNX0.NjFZCqQH4MbHn2CjWrm_An2RMFd-xiEndl3ZOoTENrQ
